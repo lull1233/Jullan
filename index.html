@@ -2,51 +2,65 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Welcome to My Website!</title>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <style>
-        body {background-color: DarkGrey;}
+        body {
+            background-color: DarkGray; /* Change background color to a dark gray */
+            margin: 0;
+            padding: 0;
+        }
+        /* Center the font, set title size, set font color */
         h1 {
-            font-size: 9em;
-            text-align: center;
+            font-size: 3em;
+            text-align: center; /* Center the title */
             margin-top: 50px;
+            color: #000; /* Change text color to black */
+            margin-bottom: 20px; /* Add margin at the bottom for spacing */
         }
-        /* Style for the boxes */
-        .box {
-            width: 30%;
-            background-color: #333;
-            color: #fff;
-            padding: 20px;
-            margin: 20px 10px;
-            text-align: center;
-            border-radius: 10px;
-            display: inline-block;
-            vertical-align: top;
-            box-sizing: border-box;
+        nav {
+            position: fixed;
+            top: 20px;
+            right: 20px; /* Adjust top and right position for alignment */
+            padding: 10px;
+            background-color: rgba(255, 255, 255, 0.8); /* Add transparency to the background of the Nav */
+            border-radius: 10px; /* Add border */
         }
-        /* Style for the links */
-        .box a {
-            color: #fff;
+        nav a {
             text-decoration: none;
-            display: block;
-            margin-top: 10px;
+            color: #333;
+            margin-right: 20px;
+            font-weight: bold; /* Bold Font */
+        }
+        nav a:hover {
+            color: #555; /* When user hovers it changes color */
+        }
+        .image-container {
+            text-align: center; /* Center images */
+            margin-top: 20px; /* Space between Title and photos */
+        }
+        .image-container img {
+            display: block; /*  images are blocks  */
+            margin: 0 auto; /* Center images  */
+            border-radius: 10px; /* Add border  */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Box Shadow */
+            margin-bottom: 30px; /* Space at Bottom of page */
         }
     </style>
 </head>
 <body style="font-family: 'Nunito', sans-serif;">
 
-<h1>Welcome to my Website!</h1> <!-- Header -->
+<h1>Welcome to My Website!</h1>
 
-<!-- Three boxes for navigation -->
-<div class="box">
-    <a href="./Contact.html">Contact Page</a>
-</div>
-<div class="box">
-    <a href="./Home.html">Home Page</a>
-</div>
-<div class="box">
-    <a href="./About.html">About Me Page</a>
+<nav>
+    <a href="./Contact.html">Contact Me</a>
+    <a href="./About.html">About Me</a>
+</nav>
+
+<div class="image-container">
+    <img src="IMG_4745.jpg" alt="puppy" width="500" height="500">
+    <img src="3.jpeg" alt="me with bird" width="500" height="500">
 </div>
 
 </body>

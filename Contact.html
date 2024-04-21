@@ -4,71 +4,142 @@
     <meta charset="UTF-8">
     <title>Contact Me</title>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
-    <!-- light blue background in the style portion. -->
     <style>
+        /* Body edits like gray background black text color and no margin or padding */
         body {
-            background-color: DarkGrey;
+            background-color: DarkGray; /* gray background */
             font-family: 'Nunito', sans-serif;
-            color: black;
+            color: #000; /* Black text color */
             margin: 0;
+            padding: 0;
+        }
+        /* Edits to header one here centering text and black text */
+        h1 {
+            text-align: center; /* Center text */
+            margin-top: 50px;
+            color: #000; /* Black text color */
         }
 
+        .container {
+            max-width: 500px; /* Container Width */
+            margin: 0 auto;
+            padding: 20px; /* Padding for inside of container */
+            background-color: #fff; /* White background for form */
+            border-radius: 10px; /* Rounded corners */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Shadow effect */
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px; /* Spacing */
+            color: #000; /* Black text color */
+        }
+        /* Form Input Styling */
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            width: 100%;
+            padding: 10px; /* Spacing */
+            margin-bottom: 15px;
+            border: 1px solid #ccc; /* Border for the input box */
+            border-radius: 5px; /* Rounding Input Corners */
+            box-sizing: border-box;
+            font-family: 'Nunito', sans-serif; /* Font */
+            font-size: 16px;
+        }
+
+        textarea {
+            height: 100px; /* Height of the message input box */
+        }
+
+        input[type="submit"] {
+            background-color: #007bff; /* Blue submit button */
+            color: #fff; /* White text color */
+            border: none;
+            padding: 12px 20px; /* Spacing */
+            border-radius: 5px;
+            cursor: pointer; /* Changes Cursor over submit button */
+            font-size: 16px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3; /* Submit button Darker blue on hover */
+        }
+        /* Error Messages Color and Spacing */
         .error {
             color: red;
+            margin-top: 5px;
         }
-
+        /* Centers and spaces the links */
+        .links {
+            text-align: center;
+            margin-top: 20px;
+        }
+        /* Spacing and styling for links on bottom of page */
+        .links a {
+            display: inline-block;
+            margin-right: 15px;
+            text-decoration: none;
+            color: #007bff; /* Blue link color */
+        }
+        .links a:hover {
+            text-decoration: underline; /* When hovering links it underlines*/
+        }
         nav {
             position: fixed;
-            top: 0;
-            right: 0;
-            padding: 20px;
-            background-color: white;
-            border-radius: 0 0 0 10px;
+            top: 20px; /* Align */
+            right: 20px; /* Align */
+            padding: 10px; /* spacing */
+            background-color: rgba(255, 255, 255, 0.8); /* Basically make background white for nav */
+            border-radius: 10px; /* Border Radius */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* shadow for depth */
         }
-
         nav a {
             text-decoration: none;
-            color: black;
-            margin-right: 30px;
+            color: #000;
+            margin-right: 20px;
+            font-weight: bold; /* Bold font */
         }
+        nav a:hover {
+            color: #555; /* Change color on hover */
     </style>
 </head>
 <body>
-<!-- use of different headers and links to craft my contact page. -->
-<h1>Hello this is my contact information page</h1>
-<h3>Below are the links to my different social media and contacts</h3>
-<h4>My student email is: jreyes49@students.kennesaw.edu <br>My personal email is jujureyes1@gmail.com</h4>
-<a href="https://www.instagram.com/jullian.r?igsh=MXRoY2phaDlvMmVxdA%3D%3D&utm_source=qr">This is a link to my instagram</a>
-<br><br>
-<a href="https://www.linkedin.com/in/jreyes49?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BHTPWtmkWQ6G9UbtslLoz%2FA%3D%3D">
-    This is a link to my LinkedIn</a>
 
-<!-- Contact Form -->
-<h2>To Contact Me</h2>
+<h1>Contact Me</h1>
+<!-- below are the form creation and container for the form -->
+<div class="container">
+    <form id="contactForm" onsubmit="return validateForm()">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name">
+        <span id="nameError" class="error"></span>
 
-<form id="contactForm" onsubmit="return validateForm()">
-    <label for="name">Full Name:</label><br>
-    <input type="text" id="name" name="name"><br>
-    <span id="nameError" class="error"></span><br>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email">
+        <span id="emailError" class="error"></span>
 
-    <label for="email">Email:</label><br>
-    <input type="email" id="email" name="email"><br>
-    <span id="emailError" class="error"></span><br>
+        <label for="message">Message For Me:</label>
+        <textarea id="message" name="message" rows="4"></textarea>
+        <span id="messageError" class="error"></span>
 
-    <label for="message">Message:</label><br>
-    <textarea id="message" name="message" rows="4"></textarea><br>
-    <span id="messageError" class="error"></span><br>
-
-    <input type="submit" value="Submit">
-</form>
-<!-- above collects the users name, email address, messages, adn does validation for each. -->
-<!-- ending the page with the navigation portion with different links to different pages -->
+        <input type="submit" value="Submit">
+    </form>
+<!-- below are the links to my email and social media pages -->
+    <div class="links">
+        <a href="mailto:jreyes49@students.kennesaw.edu">jreyes49@students.kennesaw.edu</a>
+        <a href="mailto:jujureyes1@gmail.com">jujureyes1@gmail.com</a>
+        <a href="https://www.instagram.com/jullian.r?igshid=MXRoY2phaDlvMmVxdA%3D%3D&utm_source=qr">Instagram</a>
+        <a href="https://www.linkedin.com/in/jreyes49?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BHTPWtmkWQ6G9UbtslLoz%2FA%3D%3D">LinkedIn</a>
+    </div>
+</div>
+<!-- nav links to other pages -->
 <nav>
     <a href="./index.html">Index</a>
-    <a href="./Home.html">Home</a>
     <a href="./About.html">About Me</a>
 </nav>
-
+<!-- script for the contact form uses different function and if else statements to validate
+the contents of the form.
+Also uses name, email, message validation. Displays error messages if values are incorrect. -->
 <script>
     function validateForm() {
         var name = document.getElementById('name').value;
@@ -78,21 +149,15 @@
         var emailError = document.getElementById('emailError');
         var messageError = document.getElementById('messageError');
         var isValid = true;
-</script>
-<!-- Due to the comments not working mid-script I will write here.
-The below section will do a couple of things like if else statements in order to validate emails
-validate and pop up error messages and validate characters in the form submission.
-https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_contact_form -->
-<script>
-        if (name.trim() == '') {
+
+        if (name.trim() === '') {
             nameError.textContent = 'Name is required';
             isValid = false;
         } else {
             nameError.textContent = '';
         }
-
         // Email validation
-        if (email.trim() == '') {
+        if (email.trim() === '') {
             emailError.textContent = 'Email is required';
             isValid = false;
         } else if (!isValidEmail(email)) {
@@ -101,18 +166,15 @@ https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_contact_form -->
         } else {
             emailError.textContent = '';
         }
-
         // Message validation
-        if (message.trim() == '') {
+        if (message.trim() === '') {
             messageError.textContent = 'Message is required';
             isValid = false;
         } else {
             messageError.textContent = '';
         }
-
         return isValid;
     }
-
     // Function to validate email format
     function isValidEmail(email) {
         var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
